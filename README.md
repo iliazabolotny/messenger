@@ -18,4 +18,4 @@
 2. Запуск сервера `npm run dev`
 
 ## Демонстрация
-https://messenger-bice-alpha.vercel.app/
+[Messenger](https://messenger-bice-alpha.vercel.app/)
