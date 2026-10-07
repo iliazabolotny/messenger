@@ -22,9 +22,21 @@ export default function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const handlePhoneChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    let value = event.target.value.replace(/\D/g, '');
+
+    if (value.length > 0) {
+      value = '+7' + value.replace(/^7/, '');
+    }
+
+    setPhone(value.slice(0, 12));
+  };
+
   const handlePhoneSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!phone.trim()) return;
+    if (!phone.trim() || phone.length !== 12) return;
 
     setLoading(true);
     setError('');
@@ -91,12 +103,19 @@ export default function LoginScreen() {
                     />
                     <TextField
                       label="Номер телефона Max собеседника"
+                      helperText="Номер телефона"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      helperText="Формат: 7123456790"
+                      onChange={handlePhoneChange}
+                      placeholder='+71234567890'
                       type="tel"
                       required
                       fullWidth
+                      slotProps={{
+                        htmlInput: {
+                          maxLength: 12,
+                          inputMode: 'numeric',
+                        },
+                      }}
                     />
                     {error && <Alert severity="error">{error}</Alert>}
                     <Button type="submit" variant="contained" size="large" disabled={loading} sx={{bgcolor: '#0079fc','&:hover': { bgcolor: '#70acea' }}}>
@@ -107,8 +126,8 @@ export default function LoginScreen() {
                           href="https://green-api.com/max"
                           target="_blank"
                           rel="noreferrer"
-                          underline="hover"
-                          sx={{ fontWeight: 600 }}
+                          underline='none'
+                          sx={{ fontWeight: 600, color: '#BDBDBD' }}
                         >
                           Регистрация
                         </Link>

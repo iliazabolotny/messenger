@@ -87,7 +87,7 @@ export default function Sidebar({
           }}
         >
           <Stack direction="row" spacing={1.5}>
-            <Avatar sx={{ width: 44, height: 44, background: 'linear-gradient(135deg, #667eea, #764ba2)' }}>
+            <Avatar sx={{ width: 44, height: 44 }}>
               {phone.slice(-2)}
             </Avatar>
             <Box sx={{ minWidth: 0 }}>
@@ -111,7 +111,7 @@ export default function Sidebar({
           </Button>
           <Button
             variant="text"
-            color="error"
+            color="secondary"
             startIcon={<LogoutIcon />}
             onClick={onLogout}
             sx={{ justifyContent: 'flex-start', px: 1.5 }}

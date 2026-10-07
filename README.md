@@ -8,6 +8,7 @@
 * Пользователь видит ответ получателя в чате.
  
 ## Стек технологий
+* TypeScript
 * MUI
 * React
 * Redux Toolkit
@@ -17,5 +18,5 @@
 1. Установка зависимостей `npm install`
 2. Запуск сервера `npm run dev`
 
-## Демонстрация
+## Проект
 [Messenger](https://messenger-bice-alpha.vercel.app/)
