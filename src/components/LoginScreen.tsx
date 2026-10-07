@@ -97,7 +97,7 @@ export default function LoginScreen() {
                       value={apiTokenInstance}
                       onChange={(e) => setApiTokenInstance(e.target.value)}
                       type="password"
-                      helperText="Токен авторизации из личного кабинета"
+                      helperText="Токен авторизации из личного кабинета GREEN-API"
                       required
                       fullWidth
                     />
